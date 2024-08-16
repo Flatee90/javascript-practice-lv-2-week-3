@@ -25,7 +25,25 @@ console.log(book.pages); // Output: 300
 // Add a method named `watch` that logs a message: "You watched {movie.title}."
 // Add another method named `updateYear` that updates the `year` property.
 // Use `this` to access and modify the properties.
+const movie = {
+  title: 'The Notebook',
+  director: 'Nick Cassavetes',
+  leading: 'Ryan Gosling',
+  year: 2004,
 
+  watch: function () {
+    console.log(`${this.title} directed by ${this.director}, starring ${this.leading} made in ${this.year} I love this movie! a real tear jerker`);
+  },
+  updatemovie: function (newYear) {
+    this.year = newYear;
+  }
+};
+
+console.log(movie.title);
+console.log(movie.year);
+movie.watch();
+movie.updatemovie(2004);
+console.log(movie.year);
 
 // Example 2: Adding Methods to a Pet Object
 const pet = {
@@ -49,7 +67,30 @@ console.log(pet.name);  // Output: Paws
 // TODO 2: Add a method to `city` object
 // Add a method named `addPopulation` that increases the `population` property by a given number.
 // Add another method named `rename` that updates the `name` property using `this`.
+const city = {
+  name: 'New Orleans',
+  population: '369749', // Changed to a number
+  country: 'USA',
+  parish: 'Jefferson Parish',
+  year: 1718,
 
+  status: function () {
+    console.log(`${this.city} has ${this.population} people in it.`)
+  },
+  addPopulation: function () {
+    this.population += 2000;
+    console.log(`${this.name} in 2022 had a population of 369,749. Looking at trends, it may increase by ${this.population}.`);
+  },
+  rename: function (newName) {
+    this.name = newName;
+    console.log(`New Orleans is French for ${this.name}.`);
+  }
+};
+city.status();
+city.addPopulation();
+city.status();
+city.rename('La Nouvelle-Orleans');
+console.log(city.name);
 
 // Example 3: Adding Methods to a Car Object
 const car = {
@@ -72,7 +113,26 @@ console.log(car.year); // Output: 2023
 // TODO 3: Add a method to `computer` object
 // Add a method named `upgradeRAM` that updates the `ram` property.
 // Add another method named `describe` that logs a message with the `brand`, `processor`, and `ram` properties.
+const computer = {
+  brand: 'Apple iMac',
+  processor: 'Apple M3 Chip',
+  ram: 8,
+  status: function () {
+    console.log(`${this.brand} has ${this.processor} with ${this.ram}.`)
+  },
+  Mac(){
+    console.log(`${this.brand} ${this.processor} and ${this.ram} is the latest model of iMac`);
+  },
+  upgradeRam: function(addedRam){
+    this.ram = addedRam;
+  }
 
+};
+computer.status();
+computer.upgradeRam(16);
+computer.status();
+computer.Mac();
+console.log(computer.processor);
 
  // Example 4: Adding Methods to a Product Object
 const product = {
@@ -97,6 +157,28 @@ console.log(product.inStock); // Output: false
 // TODO 4: Add a method to `restaurant` object
 // Add a method named `changeRating` that updates the `rating` property.
 // Add another method named `reopen` that sets the `inStock` property to true.
+const restaurant = {
+  name: 'Flemings',
+  type: 'fine-dining',
+  rating: 4.5,
+  reopen() {
+    console.log(`${this.name} is open right now until 9 pm CST.`);
+  },
+  changeRating(change) {
+    this.rating += change;
+  },
+  status() {
+    console.log(`${this.name} is a ${this.type} with a rating of ${this.rating}.`);
+  }
+};
+
+restaurant.status();
+restaurant.reopen();
+restaurant.status();
+console.log(restaurant.rating);
+restaurant.changeRating(-0.1);
+restaurant.status();
+console.log(restaurant.rating);
 
 
 // Example 5: Adding Methods to a Student Object
@@ -120,4 +202,25 @@ console.log(student.fullName()); // Output: John Doe
 // TODO 5: Add a method to `house` object
 // Add a method named `renovate` that increases the `size` property by a given number.
 // Add another method named `changeAddress` that updates the `address` property.
+const house = {
+  address: '527 N  Dilton',
+  size: 1500,
+  hasGarage: true,
+  renovate() {
+    this.size += 5994;
+    console.log(`${this.address}`);
+  },
+  changeAddress(newAddress) {
+    this.address = newAddress;
+  },
+  status() {
+    console.log(`${this.address} has ${this.size} square feet and sits on over 2 acres of land.`);
+  }
+};
 
+house.status();
+house.changeAddress('4137 West Louisiana State Dr. Kenner, La 70065');
+house.status();
+console.log(house.size);
+house.renovate();
+house.status();
