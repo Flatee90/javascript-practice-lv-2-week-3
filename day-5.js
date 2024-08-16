@@ -22,6 +22,9 @@ const songs = [];
 
 // Example: 
 songs.push(createSong('Yesterday', 'The Beatles', 1965));
+songs.push(createSong('What a Wonderful World', 'Louis Armstrong', 1967));
+songs.push(createSong('Over the Rainbow', 'Judy Garland', 1939));
+songs.push(createSong('Sitting on the Dock of the Bay', 'Otis Redding', 1968));
 
 console.table(songs);
 
@@ -36,7 +39,8 @@ console.log("\nExample 2: Accessing Objects in the Array");
 // Example
 console.log("First song: Title = " + songs[0].title + ", Artist = " + songs[0].artist);
 // TODO: Access and log the details of the rest of the songs in the array
-
+console.log("second song: Artist = " + songs[1].artist + ", Year = " + songs[1].year);
+console.log("third song: Title = " + songs[2].title + ", Year = " +songs[2].year);
 console.log("\nExample 3: Adding More Songs");
 
 // TODO 3: Add two more song objects to the `songs` array using the factory function:
@@ -47,7 +51,9 @@ console.log("\nExample 3: Adding More Songs");
 songs.push(createSong('My Way', 'Frank Sinatra', 1969));
 songs.push(createSong('Imagine', 'John Lennon', 1971));
 // TODO 3: Add two songs more of your own
+songs.push(createSong('Plastic off the Sofa', 'Beyonce', 2022));
 
+songs.push(createSong('Smoke', 'Victoria Monet', 2022));
 console.table(songs);
 
 console.log("\nExample 4: Accessing New Songs");
@@ -64,7 +70,8 @@ console.log("Fourth song: Title = " + songs[3].title + ", Artist = " + songs[3].
 // TODO 4:
 // Modify the details of the fifth song
 // - Artist and year of the fifth song
-
+songs[5].artist = "Kenrdick Lamar";
+songs[5].year = "2012";
 
 
 console.log("\nExample 5: Modifying the Array");
@@ -80,4 +87,6 @@ songs[0] = createSong('Eleanor Rigby', 'The Beatles', 1966);
 console.log("Updated first song: Title = " + songs[0].title + ", Artist = " + songs[0].artist + ", Year = " + songs[0].year);
 
 // TODO 5: Completely Replace the details of the second song.
+songs[2] = createSong('Stuck', 'Durand Bernarr', 2020);
+console.log("updated second song: Title = " + songs[2].title + ", Artist = " + songs[2].artist + ", Year = " + songs[2].year);
 
